@@ -20,6 +20,7 @@ export const deleteUser= (request, response)=>{
     
 }
 export const showUser= (request, response)=>{
-    const {name,email,password,bio}=req.body
-    
+    const {username ,password}=req.body
+    const newUser =  userModel.find(username ,password)
+    response.status(200).json({newUser})
 }
